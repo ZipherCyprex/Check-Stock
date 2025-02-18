@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="images/logo-icon.png" alt="Zipherccc Icon" class="logo-icon">
+        </a>
+        <button class="mobile-menu-btn">☰</button>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="#">Resources</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="#">Update Zipher</a>
+        </div>
+    </nav>
+
+    <main class="product-detail-container container">
+        <div class="breadcrumb">
+            <a href="index.html">Pentesting Hardware</a> >
+            <!-- <a href="products.html">Flipper Zero</a> > -->
+            <span>Product Detail</span>
+        </div>
+
+        <div class="product-content">
+            <div class="product-gallery">
+                <img id="main-product-image" src="" alt="Main product image">
+            </div>
+
+            <!-- <div class="thumbnail-grid"></div> -->
+
+            <div class="product-info">
+                <h1 id="product-title"></h1>
+                <p class="price-stock">
+                    <span id="product-price"></span>
+                    <span id="product-stock"></span>
+                </p>
+                <div class="product-description"></div>
+                <div class="product-features">
+                    <h3>Key Features</h3>
+                    <ul id="features-list"></ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>

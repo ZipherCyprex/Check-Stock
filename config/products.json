@@ -1,0 +1,85 @@
+{
+    "featuredItems": [
+        {
+            "id": "A1",
+            "name": "Flipper Zero BFFB",
+            "price": 146.00,
+            "stock": "Out of stock",
+            "image": "images/BFRB.png",
+            "category": "Pentesting Hardware/Flipper Zero",
+            "images": [
+                "images/BFRB-2.png",
+                "images/bfrb-2.jpg",
+                "images/bfrb-3.jpg",
+                "images/bfrb-4.jpg"
+            ],
+            "description": "The Flipper Zero BFFB is our do-it-all solution for Flipper Zero peripherals...",
+            "features": [
+                "Dual CC1101",
+                "nRF24L01+ with power amplifier and low-noise amplifier",
+                "ESP32-WROOM-32EU",
+                "GPS",
+                "Micro SD Expansion",
+                "Protective enclosure designed by AWOK Dynamics"
+            ]
+        },
+        {
+            "id": "A2",
+            "name": "ESR32 Marauder Mini",
+            "price": 92.00,
+            "stock": "Out of stock",
+            "image": "images/BFRB.png",
+            "category": "Pentesting Hardware/WiFi Tools",
+            "images": [
+                "images/marauder-mini-1.png"
+            ],
+            "description": "",
+            "features": []
+        },
+        {
+            "id": "HID",
+            "name": "Skull Hat 2.0",
+            "price": 35.00,
+            "stock": "In stock",
+            "image": "images/BFRB.png",
+            "category": "Merchandise",
+            "images": [
+                "images/skull-hat-1.png"
+            ],
+            "description": "",
+            "features": []
+        },
+        {
+            "id": "HERTZ",
+            "name": "AWOK Dynamics MAC Patch",
+            "price": 9.00,
+            "stock": "In stock",
+            "image": "images/BFRB.png",
+            "category": "Accessories",
+            "images": [
+                "images/mac-patch-1.png"
+            ],
+            "description": "",
+            "features": []
+        }
+    ],
+
+    "gallery": {
+    "categories": [
+      {
+        "name": "Flipper Zero Series",
+        "images": [
+          "images/BFRB.png",
+          "images/BFRB.png"
+        ]
+      },
+      {
+        "name": "Accessories",
+        "images": [
+          "images/BFRB.png",
+          "images/BFRB.png"
+        ]
+      }
+    ]
+  }
+}
