@@ -14,6 +14,9 @@
     font-style: normal;
 }
 
+*, *::before, *::after {
+    box-sizing: inherit;
+}
 
 /* Gallery หมวดหมู่ */
 .gallery-category-title {
@@ -95,15 +98,24 @@
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+.page-width {
+    max-width: 76rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.nav-div {
+    background: #1a1a1a;
+    display: block;
+    padding: 1rem 2rem;
+}
 /* Navigation */
 nav {
-    background: #1a1a1a;
-    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -140,29 +152,44 @@ nav {
 
 /* Responsive Menu */
 @media (max-width: 768px) {
+
+    .banner img {
+        max-height: 120px;
+    }
     .mobile-menu-btn {
         display: block;
     }
 
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: #1a1a1a;
-        width: 200px;
-        padding: 1rem;
-        flex-direction: column;
-        border-radius: 0 0 0 8px;
-    }
-
-    .nav-links.active {
-        display: flex;
-        opacity: 1;
-        transform: translateY(0);
-        z-index: 2;
-        transition: all 0.3s ease-out;
-    }
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #1a1a1a00;
+            width: 200px;
+            right: -32px;
+            flex-direction: column;
+            border-radius: 0 0 0 8px;
+            opacity: 0;
+            transform: translateX(100%);
+            /* เริ่มเลื่อนออกไปทางขวา */
+            transition: all 0.3s ease-out;
+        }
+    
+        .nav-links.active {
+            display: flex;
+            opacity: 1;
+            background: #1a1a1a00;
+            transform: translateX(0);
+            z-index: 2;
+        }
+        .nav-links.active {
+            display: flex;
+            opacity: 1;
+            background: #1a1a1a;
+            transform: translateX(0);
+            z-index: 2;
+        }
 
     .nav-links a {
         margin: 0.5rem 0;

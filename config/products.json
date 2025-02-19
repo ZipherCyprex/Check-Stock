@@ -50,6 +50,32 @@
             "features": []
         },
         {
+          "id": "HID",
+          "name": "Skull Hat 2.0",
+          "price": 35.00,
+          "stock": "In stock",
+          "image": "images/BFRB.png",
+          "category": "Merchandise",
+          "images": [
+            "images/skull-hat-1.png"
+          ],
+          "description": "",
+          "features": []
+        },
+        {
+          "id": "HID",
+          "name": "Skull Hat 2.0",
+          "price": 35.00,
+          "stock": "In stock",
+          "image": "images/BFRB.png",
+          "category": "Merchandise",
+          "images": [
+            "images/skull-hat-1.png"
+          ],
+          "description": "",
+          "features": []
+        },
+        {
             "id": "HERTZ",
             "name": "AWOK Dynamics MAC Patch",
             "price": 9.00,
