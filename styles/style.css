@@ -1,10 +1,26 @@
 /* Base Styles */
 * {
+    
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'DM Sans', sans-serif;
     list-style-type: none;
+}
+
+*:root {
+    --textcolor: #c1b9b9
+}
+
+html,
+body {
+    height: 100%;
+    /* ใช้ความสูงเต็มของหน้าจอ */
+    margin: 0;
+    /* ลบ Margin */
+    
+    flex-direction: column;
+    /* จัดเรียงแนวตั้ง */
 }
 
 .dm-sans-<uniquifier> {
@@ -98,6 +114,7 @@
 }
 
 .container {
+    
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
@@ -109,18 +126,18 @@
     padding: 0 1.5rem;
 }
 
-.nav-div {
-    background: #1a1a1a;
-    display: block;
-    padding: 1rem 2rem;
-}
-/* Navigation */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .logo {
     color: white;
@@ -148,6 +165,12 @@ nav {
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
+}
+@media (max-width: 420px) {
+    .nav-div {
+        padding: .6rem 0 !important;
+        
+    }
 }
 
 /* Responsive Menu */
@@ -196,6 +219,21 @@ nav {
     }
 }
 
+
+.nav-div {
+    background: #1a1a1a;
+    display: block;
+    padding: 1rem 2rem;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
 /* Product Cards */
 .products-container {
     display: grid;
@@ -227,7 +265,7 @@ nav {
 }
 
 .product-card h3 {
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     font-size: 1.1rem;
 }
 
@@ -302,7 +340,7 @@ nav {
 
 .banner img {
     width: 100%;
-    height: 300px;
+    /* height: 300px; */
     object-fit: cover;
     border-radius: 0;
 }
@@ -340,4 +378,138 @@ nav {
 
 .breadcrumb a:hover {
     text-decoration: underline;
+}
+
+/* Footer styles */
+.footer {
+    
+    
+    text-align: center;
+    padding: 20px;
+    background-color: #0000000a;
+    text-align: center;
+}
+
+.footer-logo {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    
+}
+
+.newsletter-form input[type="email"] {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.newsletter-form button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.social-links a {
+    margin: 0 5px;
+    font-size: 18px;
+    color: #000;
+    
+}
+
+.social-links {
+    margin-bottom: 15px;
+}
+
+.footer-text {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.footer-text a {
+    color: #000;
+    text-decoration: none;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #888;
+}
+
+.w-line {
+    background-color: #00000033;
+    border: 0;
+    height: 1px;
+    width: 100%;
+    
+}
+
+.padd {
+    padding: 1rem 0;
+    align-items: inherit;
+}
+
+.footer-ico {
+    filter: brightness(0) invert(0);
+    padding: 1rem;
+    height: 60px;
+    width: auto;
+    
+}
+
+.fa {
+    padding: 4px;
+    text-align: center;
+}
+
+@media (min-width: 700px) {
+    .footer {
+        background-color: #00000000;
+    }
+
+    .footer-ico {
+        text-align: left;
+        height: 75px;
+    }
+    .T-left {
+        text-align: left;
+        
+        display: flex;
+        align-items: center;
+    }
+    .T-right {
+        text-align: right !important;
+        
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .fa {
+        padding: 0px !important;
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+a {
+    cursor: pointer;
+}
+
+.margin-t {
+    margin-top: 35px;
 }
