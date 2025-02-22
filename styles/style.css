@@ -507,7 +507,7 @@ nav {
     padding: 4px;
     text-align: center;
 }
-@media (min-width: 370px) {
+@media (max-width: 360px) {
 .footer-ico {
     height: 40px;
 }
