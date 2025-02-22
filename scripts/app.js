@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (path === 'index.html' || path === '') renderHome(data);
             if (path === 'products.html') renderProducts(data);
             if (path === 'product-detail.html') renderProductDetail(data);
+            if (path === 'gallery.html') renderGallery(data.gallery); // เพิ่มบรรทัดนี้
         });
 });
 
@@ -35,12 +36,79 @@ function renderProducts(data) {
     renderProductCards(container, data.featuredItems);
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  const mainImage = document.getElementById('main-product-image');
+  const thumbnails = document.querySelectorAll('.thumbnail-item img');
+
+  // เปลี่ยนรูปหลักเมื่อคลิก Thumbnail
+  thumbnails.forEach((thumbnail) => {
+    thumbnail.addEventListener('click', () => {
+      // อัปเดต src ของรูปหลัก
+      mainImage.src = thumbnail.src;
+
+      // กำหนด active class ให้ Thumbnail ที่ถูกคลิก
+      document.querySelectorAll('.thumbnail-item').forEach(item => item.classList.remove('active'));
+      thumbnail.parentElement.classList.add('active');
+    });
+  });
+
+  // ฟีเจอร์ Zoom เมื่อ Hover รูปหลัก
+  mainImage.addEventListener('mousemove', (e) => {
+    const rect = mainImage.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+    // อัปเดตตำแหน่งการซูม
+    mainImage.style.transformOrigin = `${x}% ${y}%`;
+    mainImage.style.transform = 'scale(2)';
+  });
+
+  // รีเซ็ตเมื่อเมาส์ออกจากรูปภาพ
+  mainImage.addEventListener('mouseleave', () => {
+    mainImage.style.transform = 'scale(1)';
+    mainImage.style.transformOrigin = 'center center';
+  });
+});
+
+
+mainImage.addEventListener('click', () => {
+  const fullScreenWindow = window.open('', '_blank');
+  fullScreenWindow.document.write(`<img src="${mainImage.src}" style="width:100%;height:auto;">`);
+});
+
+
 function renderProductDetail(data) {
-    const params = new URLSearchParams(window.location.search);
-    const product = data.featuredItems.find(item => item.id === params.get('id'));
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get('id');
+  const product = data.featuredItems.find(item => item.id === productId);
 
-    if (!product) return;
+  if (!product) return;
 
+  // อัปเดต Main Image
+  const mainImage = document.getElementById('main-product-image');
+  mainImage.src = product.images[0];
+
+  // อัปเดต Thumbnails
+  const thumbnailGrid = document.querySelector('.thumbnail-grid');
+  thumbnailGrid.innerHTML = '';
+
+  product.images.forEach((image, index) => {
+    const thumbnailItem = document.createElement('div');
+    thumbnailItem.classList.add('thumbnail-item');
+    if (index === 0) thumbnailItem.classList.add('active');
+
+    thumbnailItem.innerHTML = `<img src="${image}" alt="Thumbnail ${index + 1}">`;
+    thumbnailItem.addEventListener('click', () => {
+      mainImage.src = image;
+      document.querySelectorAll('.thumbnail-item').forEach(item => item.classList.remove('active'));
+      thumbnailItem.classList.add('active');
+    });
+
+    thumbnailGrid.appendChild(thumbnailItem);
+  });
+
+  
+    
     // Update Page Content
     document.title = product.name;
     document.getElementById('product-title').textContent = product.name;
@@ -58,12 +126,26 @@ function renderProductDetail(data) {
     }
 
     // Features
-    const featuresList = document.getElementById('features-list');
-    if (product.features) {
-        featuresList.innerHTML = product.features
-            .map(feature => `<li>${feature}</li>`)
-            .join('');
-    }
+  // ส่วนของการแสดงผล features
+  const featuresList = document.getElementById('features-list');
+  const productFeatures = product.features;
+
+  featuresList.innerHTML = '';
+
+  productFeatures.forEach((featureSet) => {
+    const featureHeader = document.createElement('h3');
+    featureHeader.textContent = featureSet.name;
+    featuresList.appendChild(featureHeader);
+
+    const featureList = document.createElement('ul');
+    featureSet.items.forEach((item) => {
+      const featureItem = document.createElement('li');
+      featureItem.textContent = item;
+      featureList.appendChild(featureItem);
+    });
+    featuresList.appendChild(featureList);
+  });
+
 }
 
 // Helper Function
@@ -82,30 +164,42 @@ function renderProductCards(container, products) {
 
 // เพิ่มส่วนนี้ในฟังก์ชัน fetch
 if (path === 'gallery.html') {
+    // ส่ง data.gallery ไปให้ฟังก์ชัน
     renderGallery(data.gallery);
 }
 
+
+
+
+
+
+
+
+
+
 // ฟังก์ชันแสดง Gallery ใหม่
 function renderGallery(galleryData) {
-    const container = document.querySelector('.gallery-grid');
+  const container = document.querySelector('#gallery');
+  container.innerHTML = '';
 
-    galleryData.categories.forEach(category => {
-        // เพิ่มหัวข้อหมวดหมู่
-        container.innerHTML += `
-      <h3 class="gallery-category-title">${category.name}</h3>
-    `;
+  // สร้าง HTML สำหรับรูปภาพ
+  const imagesHTML = galleryData.img.map(img => `
+    <div class="gallery-item">
+      <img src="${img}" alt="Gallery Image" data-full="${img}">
+    </div>
+  `).join('');
 
-        // เพิ่มรูปภาพ
-        const imagesHTML = category.images.map(img => `
-      <div class="gallery-item">
-        <img src="${img}" alt="${category.name}">
-      </div>
-    `).join('');
+  // แทรก HTML ลงใน Container
+  container.innerHTML = `
+    <div class="gallery-category">
+      ${imagesHTML}
+    </div>
+  `;
 
-        container.innerHTML += `
-      <div class="gallery-category">
-        ${imagesHTML}
-      </div>
-    `;
+  // เพิ่ม Event Click ให้แต่ละรูป
+  document.querySelectorAll('.gallery-item img').forEach(img => {
+    img.addEventListener('click', () => {
+      window.open(img.dataset.full, '_blank'); // เปิดในแท็บใหม่
     });
+  });
 }

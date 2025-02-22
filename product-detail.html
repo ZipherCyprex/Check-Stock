@@ -18,8 +18,7 @@
     <div class="nav-div">
         <nav class="container">
             <a href="index.html" class="logo">
-                <img src="images/logo-icon.png" alt="Zipherccc 
-    Icon" class="logo-icon">
+                <img src="images/logo-icon.png" alt="Zipherccc Icon" class="logo-icon">
             </a>
             <button class="mobile-menu-btn">☰</button>
             <div class="nav-links">
@@ -27,8 +26,7 @@
                 <a href="products.html">Shop</a>
                 <a href="#">Resources</a>
                 <a href="gallery.html">Gallery</a>
-                <a href="https://ziphercyprex.github.io/
-    ZipherHertz-Jammer/">Update Zipher</a>
+                <a href="https://ziphercyprex.github.io/ZipherHertz-Jammer/">Update Zipher</a>
             </div>
         </nav>
     </div>
@@ -42,8 +40,14 @@
 
         <div class="product-content">
             <div class="product-gallery">
-                <img id="main-product-image" src="" alt="Main product image">
+                <div class="main-image">
+                    <img id="main-product-image" src="" alt="Main Product Image">
+                </div>
+                <div class="thumbnail-grid">
+                    <!-- Thumbnails จะถูกเพิ่มโดย JavaScript -->
+                </div>
             </div>
+
 
             <!-- <div class="thumbnail-grid"></div> -->
 
@@ -51,16 +55,27 @@
                 <h1 id="product-title"></h1>
                 <p class="price-stock">
                     <span id="product-price"></span>
-                    <span id="product-stock"></span>
+                    <span id="product-stock"></span><br>
+                    <div>
+                    <button class="order-btn">
+                        <a class="order-link"  href="checkout.html?id=HERTZ" id="checkoutLink"  > Order - Checkout   
+                        </a>
+                    </button>
+                    </div>
                 </p>
                 <div class="product-description"></div>
                 <div class="product-features">
-                    <h3>Key Features</h3>
+                    <h3 class="KeyFT">Key Features</h3>
                     <ul id="features-list"></ul>
                 </div>
             </div>
         </div>
     </main>
+
+
+
+
+
 
     <div class="margin-t">
     <footer class="container footer">
@@ -123,6 +138,19 @@
     </div>
 
     <script src="scripts/app.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('id');
+            const checkoutLink = document.getElementById('checkoutLink');
+
+            if (checkoutLink && productId) {
+                checkoutLink.href = `checkout.html?id=${productId}`;
+            }
+        });
+    </script>
+
 </body>
 
 </html>

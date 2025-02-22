@@ -1,80 +1,364 @@
 {
     "featuredItems": [
         {
-            "id": "A1",
-            "name": "Flipper Zero BFFB",
-            "price": 146.00,
-            "stock": "Out of stock",
-            "image": "images/BFRB.png",
-            "category": "Pentesting Hardware/Flipper Zero",
-            "images": [
-                "images/BFRB-2.png",
-                "images/bfrb-2.jpg",
-                "images/bfrb-3.jpg",
-                "images/bfrb-4.jpg"
-            ],
-            "description": "The Flipper Zero BFFB is our do-it-all solution for Flipper Zero peripherals...",
-            "features": [
-                "Dual CC1101",
-                "nRF24L01+ with power amplifier and low-noise amplifier",
-                "ESP32-WROOM-32EU",
-                "GPS",
-                "Micro SD Expansion",
-                "Protective enclosure designed by AWOK Dynamics"
-            ]
+          "id": "HERTZV1",
+          "name": "Zipher Hertz V1 ",
+          "price": 1400.00,
+          "stock": "Out of stock",
+          "image": "images/zh3.png",
+          "category": "Pentesting Hardware/Jammer",
+          "images": [
+            "images/zh1.png",
+            "images/zh2.png",
+            "images/zh4.png",
+            "images/zh5.png"
+          ],
+          "description": "ZipherHertz is an easy way to switch off your wireless devices. Have you ever been annoyed by your neighbours? Try it now!",
+          "features": [
+            {
+              "name": "What's Included?",
+              "items": [
+                "- x2 E01-2G4M27D (27DBM)",
+                "- x2 SMA Antenna 2.4Ghz (10DBI)",
+                "- x1 ESP32S 30PIN",
+                "- x1 3D Matte Scratch-resistant Case",
+                "- x1 StepUp Module"
+              ]
+            },
+            {
+              "name": "Battery is included. 2000mAh 3.7V ",
+              "items": [
+                "Battery life time 5 hours + ",
+                "",
+                ""
+              ]
+            },
+            {
+              "name": "Features",
+              "items": [
+                "• 4 interference modes, Bluetooth, Bluetooth low energy, Wi-Fi, RC remote",
+                "• Bluetooth: ลำโพงไร้สาย, หูฟังไร้สาย(ทุกรุ่น),  เมาส์ไร้สาย Bluetooth หรือ RF (2.4GHz) ",
+                "• Bluetooth low energy: Smart Speaker, มือถือ(Auto Connect) ",
+                "• Wi-Fi: ทั้งหมดที่ในอยุ่ในช่วงความถี่ 2.4Ghz ทั้งหมดในระยะ 50 เมตร ",
+                "• RC remote: โดรน และ รีโมทบังคับต่างๆ โหมดนี้จะทำงานทุกโหมดพร้อมกัน ",
+                ""
+              ]
+            },
+            {
+              "name": "Device Update",
+              "items": [
+                "Detailed instructions for device update",
+                "procedure can be found here.",
+                "• ziphercyprex.github.io/ZipherHertz-Jammer/"
+              ]
+            },
+            {
+              "name": "IMPORTANT:", 
+              "items": [
+                "Please be careful of water and continuous use with excessive heat. ",
+                "It is recommended to use a small heat sink to install on the ZipherHertz.",
+                ""
+              ]
+            }
+          ]
         },
         {
-            "id": "A2",
-            "name": "ESR32 Marauder Mini",
-            "price": 92.00,
-            "stock": "Out of stock",
-            "image": "images/BFRB.png",
-            "category": "Pentesting Hardware/WiFi Tools",
-            "images": [
-                "images/marauder-mini-1.png"
-            ],
-            "description": "",
-            "features": []
+          "id": "HERTZV2",
+          "name": "Zipher Hertz V2",
+          "price": 1100.00,
+          "stock": "Out of stock",
+          "image": "images/zh2.png",
+          "category": "Pentesting Hardware/Jammer",
+          "images": [
+            "images/zh1.png",
+            "images/zh3.png",
+            "images/zh4.png",
+            "images/zh5.png"
+          ],
+          "description": "ZipherHertz is an easy way to switch off your wireless devices. Have you ever been annoyed by your neighbours? Try it now! <br> (No Case and battery!)",
+          "features": [
+            {
+              "name": "What's Included?",
+              "items": [
+                "- x2 E01-2G4M27D (27DBM)",
+                "- x2 SMA Antenna 2.4Ghz (10DBI)",
+                "- x1 ESP32S 30PIN"
+              ]
+            },
+            {
+              "name": "Battery is not included. Required 3.7V PH Connector ",
+              "items": [
+                "Battery Required 3.7V",
+                "",
+                ""
+              ]
+            },
+            {
+              "name": "Features",
+              "items": [
+                "• 4 interference modes, Bluetooth, Bluetooth low energy, Wi-Fi, RC remote",
+                "• Bluetooth: ลำโพงไร้สาย, หูฟังไร้สาย(ทุกรุ่น),  เมาส์ไร้สาย Bluetooth หรือ RF (2.4GHz) ",
+                "• Bluetooth low energy: Smart Speaker, มือถือ(Auto Connect) ",
+                "• Wi-Fi: ทั้งหมดที่ในอยุ่ในช่วงความถี่ 2.4Ghz ทั้งหมดในระยะ 50 เมตร ",
+                "• RC remote: โดรน และ รีโมทบังคับต่างๆ โหมดนี้จะทำงานทุกโหมดพร้อมกัน ",
+                ""
+              ]
+            },
+            {
+              "name": "Device Update",
+              "items": [
+                "Detailed instructions for device update",
+                "procedure can be found here.",
+                "• ziphercyprex.github.io/ZipherHertz-Jammer/"
+              ]
+            },
+            {
+              "name": "IMPORTANT:",
+              "items": [
+                "Please be careful of water and continuous use with excessive heat. ",
+                "It is recommended to use a small heat sink to install on the ZipherHertz.",
+                ""
+              ]
+            }
+          ]
         },
-        {
-            "id": "HID",
-            "name": "Skull Hat 2.0",
-            "price": 35.00,
-            "stock": "In stock",
-            "image": "images/BFRB.png",
-            "category": "Merchandise",
-            "images": [
-                "images/skull-hat-1.png"
-            ],
-            "description": "",
-            "features": []
-        },
+
+
+
         {
           "id": "HID",
-          "name": "Skull Hat 2.0",
-          "price": 35.00,
-          "stock": "In stock",
-          "image": "images/BFRB.png",
-          "category": "Merchandise",
+          "name": "Zipher HID V1",
+          "price": 300.00,
+          "stock": "Out of stock",
+          "image": "images/zh2.png",
+          "category": "Pentesting Hardware/BadUsb",
           "images": [
-            "images/skull-hat-1.png"
+            "images/zh1.png",
+            "images/zh3.png",
+            "images/zh4.png",
+            "images/zh5.png"
           ],
-          "description": "",
-          "features": []
+          "description": "ZipherHertz is an easy way to switch off your wireless devices. Have you ever been annoyed by your neighbours? Try it now! <br> (No Case and battery!)",
+          "features": [
+            {
+              "name": "What's Included?",
+              "items": [
+                "- x2 E01-2G4M27D (27DBM)",
+                "- x2 SMA Antenna 2.4Ghz (10DBI)",
+                "- x1 ESP32S 30PIN"
+              ]
+            },
+            {
+              "name": "Battery is not included. Required 3.7V PH Connector ",
+              "items": [
+                "Battery Required 3.7V",
+                "",
+                ""
+              ]
+            },
+            {
+              "name": "Features",
+              "items": [
+                "• 4 interference modes, Bluetooth, Bluetooth low energy, Wi-Fi, RC remote",
+                "• Bluetooth: ลำโพงไร้สาย, หูฟังไร้สาย(ทุกรุ่น),  เมาส์ไร้สาย Bluetooth หรือ RF (2.4GHz) ",
+                "• Bluetooth low energy: Smart Speaker, มือถือ(Auto Connect) ",
+                "• Wi-Fi: ทั้งหมดที่ในอยุ่ในช่วงความถี่ 2.4Ghz ทั้งหมดในระยะ 50 เมตร ",
+                "• RC remote: โดรน และ รีโมทบังคับต่างๆ โหมดนี้จะทำงานทุกโหมดพร้อมกัน ",
+                ""
+              ]
+            },
+            {
+              "name": "Device Update",
+              "items": [
+                "Detailed instructions for device update",
+                "procedure can be found here.",
+                "• ziphercyprex.github.io/ZipherHertz-Jammer/"
+              ]
+            },
+            {
+              "name": "IMPORTANT:",
+              "items": [
+                "Please be careful of water and continuous use with excessive heat. ",
+                "It is recommended to use a small heat sink to install on the ZipherHertz.",
+                ""
+              ]
+            }
+          ]
         },
+
+
+
         {
-          "id": "HID",
-          "name": "Skull Hat 2.0",
-          "price": 35.00,
-          "stock": "In stock",
+          "id": "A4",
+          "name": "Zipher Hertz V21",
+          "price": 1400.00,
+          "stock": "Out of stock",
           "image": "images/BFRB.png",
-          "category": "Merchandise",
+          "category": "Pentesting Hardware/Flipp2er Zero",
           "images": [
-            "images/skull-hat-1.png"
+            "images/BFRB-2.png",
+            "images/bfrb-4.jpg"
           ],
-          "description": "",
-          "features": []
+          "description": "3",
+          "features": [
+            {
+              "name": "Features Set 1",
+              "items": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "name": "Features Set 2",
+              "items": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "name": "Features Set 3",
+              "items": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "name": "Features Set 4",
+              "items": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "name": "Featu23res Set 5",
+              "items": [
+                "1",
+                "444",
+                "3"
+              ]
+            }
+          ]
         },
+
+
+        {
+          "id": "A5",
+          "name": "Zipher Hertz V21",
+          "price": 1400.00,
+          "stock": "Out of stock",
+          "image": "images/BFRB.png",
+          "category": "Pentesting Hardware/Flipp2er Zero",
+          "images": [
+            "images/BFRB-2.png",
+            "images/bfrb-4.jpg"
+          ],
+          "description": "3",
+          "features": [
+            {
+              "name": "Features Set 1",
+              "items": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "name": "Features Set 2",
+              "items": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "name": "Features Set 3",
+              "items": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "name": "Features Set 4",
+              "items": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "name": "Featu23res Set 5",
+              "items": [
+                "1",
+                "444",
+                "3"
+              ]
+            }
+          ]
+        },
+
+
+        {
+          "id": "A2",
+          "name": "Zipher Hertz V21",
+          "price": 1400.00,
+          "stock": "Out of stock",
+          "image": "images/BFRB.png",
+          "category": "Pentesting Hardware/Flipp2er Zero",
+          "images": [
+            "images/BFRB-2.png",
+            "images/bfrb-4.jpg"
+          ],
+          "description": "3",
+          "features": [
+            {
+              "name": "Features Set 1",
+              "items": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "name": "Features Set 2",
+              "items": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "name": "Features Set 3",
+              "items": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "name": "Features Set 4",
+              "items": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "name": "Featu23res Set 5",
+              "items": [
+                "1",
+                "444",
+                "3"
+              ]
+            }
+          ]
+        },
+
+
         {
             "id": "HERTZ",
             "name": "AWOK Dynamics MAC Patch",
@@ -91,21 +375,14 @@
     ],
 
     "gallery": {
-    "categories": [
-      {
-        "name": "Flipper Zero Series",
-        "images": [
-          "images/BFRB.png",
-          "images/BFRB.png"
-        ]
-      },
-      {
-        "name": "Accessories",
-        "images": [
-          "images/BFRB.png",
-          "images/BFRB.png"
-        ]
-      }
-    ]
-  }
+      "img": [
+        "images/zh1.png",
+        "images/zh2.png",
+        "images/zh3.png",
+        "images/zh4.png",
+        "images/zh5.png",
+        "images/BFRB.png",
+        "images/mrud.png"
+      ]
+    }
 }
