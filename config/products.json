@@ -2,7 +2,7 @@
     "featuredItems": [
         {
           "id": "HERTZV1",
-          "name": "Zipher Hertz V1 ",
+          "name": "HERTZ V1 ",
           "price": 1400.00,
           "stock": "Out of stock",
           "image": "images/zh3.png",
@@ -64,7 +64,7 @@
         },
         {
           "id": "HERTZV2",
-          "name": "Zipher Hertz V2",
+          "name": "HERTZ V2",
           "price": 1100.00,
           "stock": "Out of stock",
           "image": "images/zh2.png",
@@ -127,9 +127,9 @@
 
         {
           "id": "HID",
-          "name": "Zipher HID V1",
+          "name": "ZIPHER HID",
           "price": 300.00,
-          "stock": "Out of stock",
+          "stock": "In Stock", 
           "image": "images/zh2.png",
           "category": "Pentesting Hardware/BadUsb",
           "images": [
@@ -138,7 +138,7 @@
             "images/zh4.png",
             "images/zh5.png"
           ],
-          "description": "ZipherHertz is an easy way to switch off your wireless devices. Have you ever been annoyed by your neighbours? Try it now! <br> (No Case and battery!)",
+          "description": "ZipherHID - Your Smart Automation & Security Learning Tool!  <br> Master system security and automation like a pro with this advanced HID device. Perfect for educational pentesting, scripting, and task automation. Quick deployment, powerful performance, and beginner-friendly interface.<br> <br> Unlock your cybersecurity potential today with ZipherHID - BadUsb! <br> <br> *For educational purposes only*",
           "features": [
             {
               "name": "What's Included?",
@@ -184,194 +184,11 @@
               ]
             }
           ]
-        },
-
-
-
-        {
-          "id": "A4",
-          "name": "Zipher Hertz V21",
-          "price": 1400.00,
-          "stock": "Out of stock",
-          "image": "images/BFRB.png",
-          "category": "Pentesting Hardware/Flipp2er Zero",
-          "images": [
-            "images/BFRB-2.png",
-            "images/bfrb-4.jpg"
-          ],
-          "description": "3",
-          "features": [
-            {
-              "name": "Features Set 1",
-              "items": [
-                "1",
-                "2",
-                "3"
-              ]
-            },
-            {
-              "name": "Features Set 2",
-              "items": [
-                "1",
-                "2",
-                "3"
-              ]
-            },
-            {
-              "name": "Features Set 3",
-              "items": [
-                "1",
-                "2",
-                "3"
-              ]
-            },
-            {
-              "name": "Features Set 4",
-              "items": [
-                "1",
-                "2",
-                "3"
-              ]
-            },
-            {
-              "name": "Featu23res Set 5",
-              "items": [
-                "1",
-                "444",
-                "3"
-              ]
-            }
-          ]
-        },
-
-
-        {
-          "id": "A5",
-          "name": "Zipher Hertz V21",
-          "price": 1400.00,
-          "stock": "Out of stock",
-          "image": "images/BFRB.png",
-          "category": "Pentesting Hardware/Flipp2er Zero",
-          "images": [
-            "images/BFRB-2.png",
-            "images/bfrb-4.jpg"
-          ],
-          "description": "3",
-          "features": [
-            {
-              "name": "Features Set 1",
-              "items": [
-                "1",
-                "2",
-                "3"
-              ]
-            },
-            {
-              "name": "Features Set 2",
-              "items": [
-                "1",
-                "2",
-                "3"
-              ]
-            },
-            {
-              "name": "Features Set 3",
-              "items": [
-                "1",
-                "2",
-                "3"
-              ]
-            },
-            {
-              "name": "Features Set 4",
-              "items": [
-                "1",
-                "2",
-                "3"
-              ]
-            },
-            {
-              "name": "Featu23res Set 5",
-              "items": [
-                "1",
-                "444",
-                "3"
-              ]
-            }
-          ]
-        },
-
-
-        {
-          "id": "A2",
-          "name": "Zipher Hertz V21",
-          "price": 1400.00,
-          "stock": "Out of stock",
-          "image": "images/BFRB.png",
-          "category": "Pentesting Hardware/Flipp2er Zero",
-          "images": [
-            "images/BFRB-2.png",
-            "images/bfrb-4.jpg"
-          ],
-          "description": "3",
-          "features": [
-            {
-              "name": "Features Set 1",
-              "items": [
-                "1",
-                "2",
-                "3"
-              ]
-            },
-            {
-              "name": "Features Set 2",
-              "items": [
-                "1",
-                "2",
-                "3"
-              ]
-            },
-            {
-              "name": "Features Set 3",
-              "items": [
-                "1",
-                "2",
-                "3"
-              ]
-            },
-            {
-              "name": "Features Set 4",
-              "items": [
-                "1",
-                "2",
-                "3"
-              ]
-            },
-            {
-              "name": "Featu23res Set 5",
-              "items": [
-                "1",
-                "444",
-                "3"
-              ]
-            }
-          ]
-        },
-
-
-        {
-            "id": "HERTZ",
-            "name": "AWOK Dynamics MAC Patch",
-            "price": 9.00,
-            "stock": "In stock",
-            "image": "images/BFRB.png",
-            "category": "Accessories",
-            "images": [
-                "images/mac-patch-1.png"
-            ],
-            "description": "",
-            "features": []
         }
+
+
+
+        
     ],
 
     "gallery": {
@@ -381,7 +198,6 @@
         "images/zh3.png",
         "images/zh4.png",
         "images/zh5.png",
-        "images/BFRB.png",
         "images/BFRB.png",
         "images/mrud.png",
         "",
