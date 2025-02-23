@@ -1,30 +1,17 @@
 window.addEventListener("load", function () {
   const loadingScreen = document.getElementById("loading");
 
-  // ดึงรูปทั้งหมดในหน้าเว็บ
-  const images = document.querySelectorAll("img");
-  const imagePromises = [];
-
-  images.forEach(img => {
-    if (!img.complete) { // ถ้ารูปยังโหลดไม่เสร็จ
-      const imgPromise = new Promise(resolve => {
-        img.onload = resolve; // รอให้โหลดเสร็จ
-        img.onerror = resolve; // ถ้าโหลดพลาดก็ให้ข้ามไป
-      });
-      imagePromises.push(imgPromise);
-    }
-  });
-
-  // รอให้รูปทุกภาพโหลดเสร็จ
-  Promise.all(imagePromises).then(() => {
-    // ค่อยๆ ทำให้หน้าโหลดจางหายไป
+  // ดีเลย์เพิ่มอีก 0.4 วินาที ก่อนเริ่ม fade-out
+  setTimeout(() => {
     loadingScreen.classList.add("fade-out");
+
+    // ซ่อนหลังจาก fade-out (0.8s) + ดีเลย์ (0.4s)
     setTimeout(() => {
       loadingScreen.style.display = "none";
     }, 800);
-  });
-});
 
+  }, 400); // ดีเลย์ 0.4 วินาที
+});
 
 
 // Config
