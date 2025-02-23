@@ -224,6 +224,7 @@ body {
         
     }
     
+    
 }
 
 /* Responsive Menu */
@@ -586,7 +587,7 @@ nav {
     .newsletter-form {
         display: block !important;
     }
-    
+
 }
 
 @media (max-width: 450px) {
