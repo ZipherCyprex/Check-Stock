@@ -92,13 +92,14 @@
             <pre id="orderSummary"></pre>
             <div class="oreder" style="justify-content: space-between; display: flex;">
             <button onclick="copyOrder()" class="order-btn" style="width: 95px; background-color: #1cff55 " id="copyButton">Copy Order</button>
-            <button class="order-btn " style="width: 95px;">
-                <a class="order-link" style="font-family: iconic; font-weight: lighter; font-size: 20px; " href="/index.html">ยกเลิก</a>
+            <button class="order-btn" style="width: 95px; cursor: pointer;" onclick="history.back()">
+                <span class="order-link" style="font-family: iconic; font-weight: lighter; font-size: 20px;">ยกเลิก</span>
             </button>
+
             </div>
         </div>
         
-        <div id="copyPopup" class="popup" style="display: none;">
+        <div id="copyPopup" class="popup" style="display: none;" onclick="history.back()>
             <div class="popup-content" style="font-family: iconic !important; padding: 40px 0; padding-bottom: 40px; " >
                 <span class="close-btn" >
                     <button  class="close-btn" style="background: none; cursor: pointer;">×</button>
@@ -182,6 +183,12 @@
     </div>
 
     <script>
+
+        function goBackPath() {
+                let path = window.location.pathname.split('/');
+                path.pop(); // ลบ path ปัจจุบันออก
+                window.location.pathname = path.join('/') || '/';
+            }
         // Get product ID from URL
         const params = new URLSearchParams(window.location.search);
         const productId = params.get('id');
