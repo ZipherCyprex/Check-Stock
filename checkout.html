@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - Zipher Hertz</title>
+    <title>ZipherStore - Checkout</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,14 +27,14 @@
                 <a href="products.html">Shop</a>
                 <a href="#">Resources</a>
                 <a href="gallery.html">Gallery</a>
-                <a href="https://ziphercyprex.github.io/ZipherHertz-Jammer/">Update Zipher</a>
+                <a target="_blank" href="https://ziphercyprex.github.io/ZipherHertz-Jammer/">Update Zipher</a>
             </div>
         </nav>
     </div>
 
     <!-- Checkout Content -->
     <div class="container" >
-        <h1>Checkout Form</h1>
+        <h1 class="section-title">Checkout Form</h1>
 
         <!-- Order Form -->
         <form id="orderForm" class="product-features container" style="margin-bottom: 2rem;">
@@ -90,8 +90,33 @@
         <div class="product-features">
             <h2>Order Summary</h2>
             <pre id="orderSummary"></pre>
-            <button onclick="copyOrder()" class="order-btn" id="copyButton">Copy Order</button>
+            <div class="oreder" style="justify-content: space-between; display: flex;">
+            <button onclick="copyOrder()" class="order-btn" style="width: 95px; background-color: #1cff55 " id="copyButton">Copy Order</button>
+            <button class="order-btn " style="width: 95px;">
+                <a class="order-link" style="font-family: iconic; font-weight: lighter; font-size: 20px; " href="/index.html">ยกเลิก</a>
+            </button>
+            </div>
         </div>
+        
+        <div id="copyPopup" class="popup" style="display: none;">
+            <div class="popup-content" style="font-family: iconic !important; padding: 40px 0; padding-bottom: 40px; " >
+                <span class="close-btn" >
+                    <button  class="close-btn" style="background: none; cursor: pointer;">×</button>
+                </span>
+                <div class=" file-bg"><img class="copy-comp" src="images/Asset/file.png" alt="Check Icon"></div>
+                <h2 >คัดลอกเรียบร้อย กรุณาส่งให้แอดมินได้ที่เพจได้เลย !</h2>
+                
+                <p>ขั้นตอนการสั่ง</p>
+
+                <p class="howto">
+                    • เอาข้อมูลที่คัดลอกไปส่งให้กับแอดมินเพจ และ
+                    <br> • จากนั้น แอดมินจะคิดราคาพร้อมกับช่องทางการโอน
+                    <br> • สุดท้าย แจ้งสลิปและรับคิวได้เลย !
+                </p>
+                <a style="font-family: iconic; font-weight: lighter; font-size: 20px; margin-top: 25px;" href="https://www.facebook.com/yourpage" class="fb-button">ไปที่เพจ Facebook</a>
+            </div>
+        </div>
+
     </div>
 
     <!-- Footer -->
@@ -174,8 +199,7 @@
         });
 
         function updateOrderSummary() {
-            const summary = `
-สั่งซื้อ ออเดอร์
+            const summary = `สั่งซื้อ ออเดอร์
 - สินค้า: [${document.getElementById('productId').value}]
 - จำนวน: [${document.getElementById('quantity').value || 1}]
 
@@ -197,28 +221,23 @@ ${isHertz ? `
 
             document.getElementById('orderSummary').textContent = summary;
         }
-
-        function copyOrder() {
-            const text = document.getElementById('orderSummary').textContent;
-            navigator.clipboard.writeText(text)
-                .then(() => alert('คัดลอกเรียบร้อยแล้ว!'))
-                .catch(err => console.error('Failed to copy:', err));
-        }
-
-        // Initial update
         updateOrderSummary();
+        
+        // Add this JavaScript
+                  
+
+            
+
+        
 
         function copyOrder() {
-                // ตรวจสอบความถูกต้องของฟอร์มทั้งหมด
                 const form = document.getElementById('orderForm');
                 if (!form.checkValidity()) {
-                    // แสดงข้อผิดพลาดทั้งหมด
                     form.reportValidity();
                     alert('กรุณากรอกข้อมูลให้ถูกต้องก่อนคัดลอก');
                     return;
                 }
 
-                // ตรวจสอบเงื่อนไขเพิ่มเติมสำหรับ WiFi
                 if (isHertz) {
                     const wifiPass = document.getElementById('wifiPassword').value;
                     if (wifiPass.length < 8) {
@@ -227,50 +246,53 @@ ${isHertz ? `
                     }
                 }
 
-                // คัดลอกข้อมูลหากผ่านเงื่อนไขทั้งหมด
                 const text = document.getElementById('orderSummary').textContent;
                 navigator.clipboard.writeText(text)
-                    .then(() => alert('คัดลอกเรียบร้อยแล้ว!'))
+                    .then(() => {
+                        document.getElementById('copyPopup').style.display = 'flex';
+                    })
                     .catch(err => console.error('Failed to copy:', err));
             }
 
-            // เพิ่มการตรวจสอบแบบ real-time
-            document.querySelectorAll('input').forEach(input => {
-                input.addEventListener('input', () => {
-                    input.setCustomValidity(''); // ล้างข้อความผิดพลาดเดิม
-                    checkCustomValidation(input); // ตรวจสอบเงื่อนไขพิเศษ
-                });
-            });
+            // Event listeners สำหรับปิด popup
+            // แก้ไขส่วน Event Listeners สำหรับปุ่มปิด
+                document.addEventListener('DOMContentLoaded', function () {
+                    // เพิ่ม Event Listener ให้ปุ่มปิด Popup
+                    document.querySelector('.close-btn').addEventListener('click', function () {
+                        document.getElementById('copyPopup').style.display = 'none';
+                    });
 
-            function checkCustomValidation(input) {
-                // ตรวจสอบเงื่อนไขเพิ่มเติม
-                if (input.id === 'wifiPassword' && isHertz) {
-                    if (input.value.length < 8) {
-                        input.setCustomValidity('รหัสต้องมีอย่างน้อย 8 ตัว');
-                    }
-                }
-
-                // ตรวจสอบ pattern อีกครั้ง
-                if (!input.checkValidity()) {
-                    input.reportValidity();
-                }
-            }
-            // เพิ่มในส่วน JavaScript
-                function updateButtonState() {
-                    const copyButton = document.getElementById('copyButton');
-                    copyButton.disabled = !form.checkValidity();
-                }
-
-                // เรียกใช้ทุกครั้งที่มีการเปลี่ยนแปลง input
-                document.querySelectorAll('input').forEach(input => {
-                    input.addEventListener('input', () => {
-                        checkCustomValidation(input);
-                        updateButtonState();
+                    // เพิ่ม Event Listener สำหรับคลิกนอก Popup
+                    window.addEventListener('click', function (event) {
+                        const popup = document.getElementById('copyPopup');
+                        if (event.target === popup) {
+                            popup.style.display = 'none';
+                        }
                     });
                 });
 
-                // เรียกครั้งแรกเมื่อโหลดหน้า
-                updateButtonState();
+            // ตรวจสอบสถานะปุ่ม
+            function updateButtonState() {
+                const copyButton = document.getElementById('copyButton');
+                copyButton.disabled = !document.getElementById('orderForm').checkValidity();
+            }
+
+            document.querySelectorAll('input').forEach(input => {
+                input.addEventListener('input', () => {
+                    checkCustomValidation(input);
+                    updateButtonState();
+                });
+            });
+
+            updateButtonState();
+
+            // ตรวจสอบ validation เพิ่มเติม
+            function checkCustomValidation(input) {
+                if (input.id === 'wifiPassword' && isHertz) {
+                    input.setCustomValidity(input.value.length < 8 ? 'รหัสต้องมีอย่างน้อย 8 ตัว' : '');
+                }
+                input.reportValidity();
+            }
     </script>
     <script src="scripts/app.js"></script>
 </body>

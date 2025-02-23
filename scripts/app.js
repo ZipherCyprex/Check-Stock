@@ -182,8 +182,17 @@ function renderGallery(galleryData) {
   const container = document.querySelector('#gallery');
   container.innerHTML = '';
 
+  // กรองเฉพาะรูปที่มีลิงก์เท่านั้น
+  const validImages = galleryData.img.filter(img => img && img.trim() !== '');
+
+  // ตรวจสอบว่ามีรูปหรือไม่
+  if (validImages.length === 0) {
+    container.innerHTML = `<p>No images available.</p>`; // แสดงข้อความเมื่อไม่มีรูป
+    return;
+  }
+
   // สร้าง HTML สำหรับรูปภาพ
-  const imagesHTML = galleryData.img.map(img => `
+  const imagesHTML = validImages.map(img => `
     <div class="gallery-item">
       <img src="${img}" alt="Gallery Image" data-full="${img}">
     </div>

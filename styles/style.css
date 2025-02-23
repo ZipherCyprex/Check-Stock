@@ -19,11 +19,11 @@ ul {
 
 html,
 body {
-    height: 100%;
-    /* ใช้ความสูงเต็มของหน้าจอ */
+    /* height: 100%; */
     margin: 0;
-    /* ลบ Margin */
-    
+    padding: 0;
+    background: linear-gradient(to bottom, #f3f3f3, #f1edf3);
+    background-size: cover; /* ป้องกันการ repeat */
     flex-direction: column;
     /* จัดเรียงแนวตั้ง */
 }
@@ -63,12 +63,12 @@ body {
 
 .gallery-category {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
 }
 /* Gallery Section */
 .gallery-grid {
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .gallery-item {
@@ -171,22 +171,42 @@ body {
 
 
 .logo {
+    
     color: white;
     font-weight: 700;
     font-size: .3rem;
     text-decoration: none;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: all 0.3s;
     
 }
 
+.nav-links a {
+    color: #d4d4d4;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 13px;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 5%; 
+    width: 0%;
+    height: 2px;
+    background-color: rgb(153, 0, 255);
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
 .nav-links a:hover {
-    color: #3498db;
+    color: #fcfcfc;
+}
+
+.nav-links a:hover::after {
+    width: 80%;
 }
 
 .mobile-menu-btn {
@@ -197,15 +217,54 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
 }
+
 @media (max-width: 420px) {
     .nav-div {
         padding: .6rem 0 !important;
         
     }
+    
 }
 
 /* Responsive Menu */
-@media (max-width: 768px) {
+@media (max-width: 760px) {
+
+
+    .oreder {
+        gap: 12px;
+        height: 50px;
+    }
+
+    .order-btn {
+        font-size: 15px !important;
+    }
+    .button.order-btn {
+        padding: 0.5rem .5rem;
+    }
+
+    .popup-content>h2 {
+            font-family: iconic;
+            font-weight: bold;
+            font-size: 23px !important;
+    }
+    
+    .popup-content>p {
+        font-family: iconic;
+        font-weight: lighter;
+        font-size: 18px !important;
+        margin-top: 10px;
+    }
+
+    
+
+    .popup-content>.howto {
+        font-family: iconic;
+        font-weight: lighter;
+        font-size: 10px;
+        margin-top: 10px;
+        text-align: left;
+        padding-left: 30px !important;
+    }
 
     .banner img {
         max-height: 120px;
@@ -221,7 +280,7 @@ body {
             right: 0;
             background: #1a1a1a00;
             width: 200px;
-            right: -32px;
+            right: -40px;
             flex-direction: column;
             border-radius: 0 0 0 8px;
             opacity: 0;
@@ -340,7 +399,7 @@ nav {
 .product-info h1 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #2c3e50;
+    color: #3c284d;
 }
 
 .price-stock {
@@ -507,10 +566,47 @@ nav {
     padding: 4px;
     text-align: center;
 }
-@media (max-width: 360px) {
+
+@media (max-width: 200px) {
+    .footer-ico {
+        height: 20px;
+    }
+
+    .gallery-category {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+    
+}
+
+@media (max-width: 370px) {
+
+    .row {
+        display: block !important;
+    }
+    .newsletter-form {
+        display: block !important;
+    }
+    
+}
+
+@media (max-width: 450px) {
 .footer-ico {
     height: 40px;
 }
+.gallery-category {
+    grid-template-columns: repeat(3, 1fr);
+}
+.nav-links a:hover::after {
+    width: 80%;
+}
+
+.nav-links a::after {
+    left: 40%;
+}
+.nav-links a:hover::after {
+    width: 70%;
+}
+
 }
 
 
@@ -539,6 +635,7 @@ nav {
     .fa {
         padding: 0px !important;
     }
+                
 }
 
 .row {
@@ -552,7 +649,7 @@ a {
 }
 
 .margin-t {
-    margin-top: 170px;
+    margin-top: 120px;
 }
 
 .order-btn {
@@ -625,3 +722,134 @@ button.order-btn {
  #features-list {
     
  }
+
+ .section-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+ }
+
+ .icon {
+    
+ }
+
+  .icon > img {
+    
+    background-color: #ffffff;
+    height: auto;
+    width: 13px;
+    padding: .23em .23em;
+    border: none;
+    border-radius: 7px;
+    vertical-align: middle; 
+    margin-left: 1px; 
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+/* เพิ่ม CSS สำหรับ Popup */
+.popup {
+    
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.089);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    
+    color: #161616;
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    background: rgba(255, 255, 255, 0.527);
+    padding: 2rem;
+    border-radius: 12px;
+    position: relative;
+    max-width: 600px;
+    height: auto;
+    width: 90%;
+    
+    text-align: center;
+}
+
+.close-btn {
+    border: none;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #00000065;
+}
+
+.fb-button {
+    display: inline-block;
+    background: #fff;
+    color: #1877f2;
+    padding: 10px 20px;
+    border-radius: 16px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+/* ส่วนอื่นๆ เหมือนเดิม */
+
+.icon > img {
+
+    background-color: #00ff95;
+    height: auto;
+    width: 15px;
+    padding: .23em .23em;
+    border: none;
+    border-radius: 7px;
+    vertical-align: middle;
+    margin-left: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.copy-comp {
+    
+    height: auto;
+    width: 60px;
+    padding: .5em .5em;
+    border: none;
+    border-radius: 17px;
+    vertical-align: middle;
+    margin-bottom: 16px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.164);
+    
+}
+
+.file-bg > img {
+    
+    filter: brightness(0) saturate(100%) invert(60%) sepia(100%) saturate(500%) hue-rotate(90deg);
+}
+
+.file-bg {
+    
+}
+
+.popup-content > p {
+    font-family: iconic;
+    font-weight: lighter;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.popup-content > h2 {
+    font-family: iconic;
+    font-weight: bold;
+}
+
+.popup-content > .howto {
+    font-family: iconic;
+    font-weight: lighter;
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: left;
+    padding-left: 150px;
+}
