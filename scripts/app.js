@@ -1,3 +1,16 @@
+window.addEventListener("load", function () {
+  const loadingScreen = document.getElementById("loading");
+
+  // เพิ่ม fade-out class
+  loadingScreen.classList.add("fade-out");
+
+  // ซ่อนหลังจาก transition จบ (0.8s)
+  setTimeout(() => {
+    loadingScreen.style.display = "none";
+  }, 800);
+});
+
+
 // Config
 const PRODUCTS_JSON = 'config/products.json';
 

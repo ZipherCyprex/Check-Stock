@@ -402,7 +402,7 @@ nav {
 .product-info h1 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #00241c;
+    color: #002010;
 }
 
 .price-stock {
@@ -855,4 +855,58 @@ button.order-btn {
     margin-top: 10px;
     text-align: left;
     padding-left: 150px;
+}
+
+/* Loading Animation */
+/* Fade-in Effect */
+#loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #0e0e0e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    /* เริ่มที่ 100% */
+    transition: opacity 0.8s ease-in-out;
+    /* ทำให้ fade ได้ */
+}
+
+/* เมื่อโหลดเสร็จ จะค่อยๆ จางหาย */
+#loading.fade-out {
+    opacity: 0;
+    pointer-events: none;
+    /* ป้องกันการกด */
+}
+/* From Uiverse.io by milley69 */
+.loading svg polyline {
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.loading svg polyline#back {
+    fill: none;
+    stroke: #ff4d5033;
+}
+
+.loading svg polyline#front {
+    fill: none;
+    stroke: #ff4d4f;
+    stroke-dasharray: 48, 144;
+    stroke-dashoffset: 192;
+    animation: dash_682 1.4s linear infinite;
+}
+
+@keyframes dash_682 {
+    72.5% {
+        opacity: 0;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
 }
