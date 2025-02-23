@@ -232,15 +232,17 @@ body {
 
 
     .oreder {
+        align-items: center;
         gap: 12px;
         height: 50px;
     }
 
     .order-btn {
-        font-size: 15px !important;
+        font-size: 17px !important;
+        padding: 0.5rem .5rem;
     }
     .button.order-btn {
-        padding: 0.5rem .5rem;
+        
     }
 
     .popup-content>h2 {
@@ -655,7 +657,7 @@ a {
 
 .order-btn {
     background-color: #272727;
-    display: inherit;
+    /* display: inherit; */
     font-weight: 600;
     margin-bottom: 10px;
     width: calc(100% - 50%);
