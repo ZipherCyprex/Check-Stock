@@ -230,37 +230,3 @@ function renderGallery(galleryData) {
 }
 
 
-async function submitOrder() {
-  const orderData = {
-    fullName: document.getElementById('fullName').value,
-    phone: document.getElementById('phone').value,
-    houseNumber: document.getElementById('houseNumber').value,
-    street: document.getElementById('street').value,
-    village: document.getElementById('village').value,
-    district: document.getElementById('district').value,
-    amphoe: document.getElementById('amphoe').value,
-    province: document.getElementById('province').value,
-    zipcode: document.getElementById('zipcode').value,
-  };
-
-  try {
-    const response = await fetch('https://zipherstore.vercel.app/scripts/api/save-order', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(orderData)
-    });
-
-    const result = await response.json();
-    if (result.success) {
-      alert('สั่งซื้อสำเร็จ! ข้อมูลถูกบันทึกลง Neon Database');
-    } else {
-      alert('เกิดข้อผิดพลาด: ' + result.error);
-    }
-  } catch (error) {
-    console.error('Error:', error);
-    alert('เกิดข้อผิดพลาดในการส่งข้อมูล');
-  }
-}
-
-// กดปุ่ม Copy แล้วส่งข้อมูลเข้า DB
-document.getElementById('copyButton').addEventListener('click', submitOrder);

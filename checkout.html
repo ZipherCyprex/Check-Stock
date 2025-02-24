@@ -251,7 +251,7 @@ ${isHertz ? `
 
         
 
-        function copyOrder() {
+        async function copyOrder() {
                 const form = document.getElementById('orderForm');
                 if (!form.checkValidity()) {
                     form.reportValidity();
@@ -259,6 +259,7 @@ ${isHertz ? `
                     return;
                 }
 
+                // ตรวจสอบ WiFi Password ถ้าเป็น HID
                 if (isHertz) {
                     const wifiPass = document.getElementById('wifiPassword').value;
                     if (wifiPass.length < 8) {
@@ -267,12 +268,41 @@ ${isHertz ? `
                     }
                 }
 
-                const text = document.getElementById('orderSummary').textContent;
-                navigator.clipboard.writeText(text)
-                    .then(() => {
-                        document.getElementById('copyPopup').style.display = 'flex';
-                    })
-                    .catch(err => console.error('Failed to copy:', err));
+                // สร้างข้อมูลที่จะส่ง
+                const orderData = {
+                    productId: document.getElementById('productId').value,
+                    quantity: document.getElementById('quantity').value,
+                    fullName: document.getElementById('fullName').value,
+                    phone: document.getElementById('phone').value,
+                    houseNumber: document.getElementById('houseNumber').value,
+                    street: document.getElementById('street').value,
+                    village: document.getElementById('village').value,
+                    district: document.getElementById('district').value,
+                    amphoe: document.getElementById('amphoe').value,
+                    province: document.getElementById('province').value,
+                    zipcode: document.getElementById('zipcode').value,
+                    wifiName: document.getElementById('wifiName').value,
+                    wifiPassword: document.getElementById('wifiPassword').value
+                };
+
+                try {
+                    // ส่งข้อมูลไปยัง API
+                    const response = await fetch('/api/saveOrder', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(orderData)
+                    });
+
+                    if (!response.ok) throw new Error('เกิดข้อผิดพลาดในการบันทึกข้อมูล');
+
+                    // คัดลอกข้อมูลและแสดง Popup
+                    const text = document.getElementById('orderSummary').textContent;
+                    await navigator.clipboard.writeText(text);
+                    document.getElementById('copyPopup').style.display = 'flex';
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('ไม่สามารถบันทึกข้อมูลได้: ' + error.message);
+                }
             }
 
             // Event listeners สำหรับปิด popup
