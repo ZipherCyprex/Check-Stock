@@ -147,7 +147,7 @@
             {
               "name": "Battery is not Required.",
               "items": [
-                "ใช้ไฟจากอุปกรณ์ที่เชื่อมต่อ (Just Plug)",
+                "ใช้ไฟจากอุปกรณ์ที่เชื่อมต่อ ( Just Plug )",
                 "",
                 ""
               ]
@@ -155,7 +155,8 @@
             {
               "name": "Features",
               "items": [
-                "• 4 interference modes, Bluetooth, Bluetooth low energy, Wi-Fi, RC remote"
+                "• Run DuckyScript With WebUi and AutoRun",
+                "• ใช้รัน DuckyScript ด้วย WebUi และ ออโต้รัน"
               ]
             },
             {
@@ -163,14 +164,14 @@
               "items": [
                 "Detailed instructions for device update",
                 "procedure can be found here.",
-                "• ziphercyprex.github.io/ZipherHertz-Jammer/"
+                "• https://zipher-update.vercel.app/"
               ]
             },
             {
               "name": "IMPORTANT:",
               "items": [
-                "Please be careful of water and continuous use with excessive heat. ",
-                "It is recommended to use a small heat sink to install on the ZipherHertz.",
+                "If you want to have more Wifi range, you have to add U.FL/IPEX by yourself, And use it for studying in private area.",
+                "",
                 ""
               ]
             }
