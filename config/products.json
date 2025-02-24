@@ -130,28 +130,24 @@
           "name": "ZIPHER HID",
           "price": 300.00,
           "stock": "In Stock", 
-          "image": "images/zh2.png",
+          "image": "images/usb2.png",
           "category": "Pentesting Hardware/BadUsb",
           "images": [
-            "images/zh1.png",
-            "images/zh3.png",
-            "images/zh4.png",
-            "images/zh5.png"
+            "images/usb1.png",
+            "images/usb2.png"
           ],
           "description": "ZipherHID - Your Smart Automation & Security Learning Tool!  <br> Master system security and automation like a pro with this advanced HID device. Perfect for educational pentesting, scripting, and task automation. Quick deployment, powerful performance, and beginner-friendly interface.<br> <br> Unlock your cybersecurity potential today with ZipherHID - BadUsb! <br> <br> *For educational purposes only*",
           "features": [
             {
               "name": "What's Included?",
               "items": [
-                "- x2 E01-2G4M27D (27DBM)",
-                "- x2 SMA Antenna 2.4Ghz (10DBI)",
-                "- x1 ESP32S 30PIN"
+                "- x1 HID ESP32S2 mini (UART)"
               ]
             },
             {
-              "name": "Battery is not included. Required 3.7V PH Connector ",
+              "name": "Battery is not Required.",
               "items": [
-                "Battery Required 3.7V",
+                "ใช้ไฟจากอุปกรณ์ที่เชื่อมต่อ (Just Plug)",
                 "",
                 ""
               ]
@@ -159,12 +155,7 @@
             {
               "name": "Features",
               "items": [
-                "• 4 interference modes, Bluetooth, Bluetooth low energy, Wi-Fi, RC remote",
-                "• Bluetooth: ลำโพงไร้สาย, หูฟังไร้สาย(ทุกรุ่น),  เมาส์ไร้สาย Bluetooth หรือ RF (2.4GHz) ",
-                "• Bluetooth low energy: Smart Speaker, มือถือ(Auto Connect) ",
-                "• Wi-Fi: ทั้งหมดที่ในอยุ่ในช่วงความถี่ 2.4Ghz ทั้งหมดในระยะ 50 เมตร ",
-                "• RC remote: โดรน และ รีโมทบังคับต่างๆ โหมดนี้จะทำงานทุกโหมดพร้อมกัน ",
-                ""
+                "• 4 interference modes, Bluetooth, Bluetooth low energy, Wi-Fi, RC remote"
               ]
             },
             {
