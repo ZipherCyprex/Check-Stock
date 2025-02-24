@@ -287,6 +287,9 @@ ${isHertz ? `
                 };
 
                 try {
+                    const text = document.getElementById('orderSummary').textContent;
+                    await navigator.clipboard.writeText(text);
+                    document.getElementById('copyPopup').style.display = 'flex';
                     // ส่งข้อมูลไปยัง API
                     const response = await fetch('/api/saveOrder', {
                         method: 'POST',
@@ -297,9 +300,7 @@ ${isHertz ? `
                     if (!response.ok) throw new Error('เกิดข้อผิดพลาดในการบันทึกข้อมูล');
 
                     // คัดลอกข้อมูลและแสดง Popup
-                    const text = document.getElementById('orderSummary').textContent;
-                    await navigator.clipboard.writeText(text);
-                    document.getElementById('copyPopup').style.display = 'flex';
+                    
                 } catch (error) {
                     console.error('Error:', error);
                     alert('ไม่สามารถบันทึกข้อมูลได้: ' + error.message);
