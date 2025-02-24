@@ -2,10 +2,18 @@ import { Pool } from 'pg';
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl: { rejectUnauthorized: false }
+    ssl: {
+        rejectUnauthorized: false,
+        // เพิ่ม SSL options สำหรับ Neon DB
+        ca: process.env.NODE_ENV === 'production' ? fs.readFileSync('/path/to/ssl-cert.pem').toString() : null
+    }
 });
-
 export default async (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST');
+
+    if (req.method === 'OPTIONS') return res.status(200).end();
+
     if (req.method !== 'POST') return res.status(405).end();
 
     try {
