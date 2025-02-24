@@ -75,7 +75,7 @@
             "images/zh4.png",
             "images/zh5.png"
           ],
-          "description": "ZipherHertz is an easy way to switch off your wireless devices. Have you ever been annoyed by your neighbours? Try it now! <br> (No Case and battery!)",
+          "description": "ZipherHertz is an easy way to switch off your wireless devices. Have you ever been annoyed by your neighbours? Try it now! <br> <br> No Case and battery! <br> - ไม่มีเคส และ แบตเตอรี่สำหรับ V2",
           "features": [
             {
               "name": "What's Included?",
@@ -156,7 +156,7 @@
               "name": "Features",
               "items": [
                 "• Run DuckyScript With WebUi and AutoRun",
-                "• ใช้รัน DuckyScript ด้วย WebUi และ ออโต้รัน"
+                "- (ใช้รันคำสั่ง DuckyScript ด้วย WebUi และ AutoRun)"
               ]
             },
             {
