@@ -2,7 +2,7 @@
     "featuredItems": [
         {
           "id": "HERTZV1",
-          "name": "HERTZ V1 ",
+          "name": "HERTZ R1-Dev ",
           "price": 1400.00,
           "stock": "Out of stock",
           "image": "images/zh3.png",
@@ -64,7 +64,7 @@
         },
         {
           "id": "HERTZV2",
-          "name": "HERTZ V2",
+          "name": "HERTZ R1-Beta",
           "price": 1100.00,
           "stock": "Out of stock",
           "image": "images/zh2.png",
@@ -127,7 +127,7 @@
 
         {
           "id": "HID",
-          "name": "ZIPHER HID",
+          "name": "ZIPHER HID R1X",
           "price": 300.00,
           "stock": "In Stock", 
           "image": "images/usb2.png",
