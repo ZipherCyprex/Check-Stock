@@ -4,13 +4,29 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', 'iconic';
     list-style-type: none;
 }
 
 ul {
     list-style: disc outside none !important;
     padding-left: 5px !important;
+}
+
+@font-face {
+    font-family: 'DMSansCustom';
+    src: url('https: //fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+    unicode-range: U+0020-007F;
+}
+
+@font-face {
+    font-family: 'IconicCustom';
+    src: url('../font/FC\ Iconic\ Regular.otf');
+    unicode-range: U+0E00-0E7F;
+}
+
+.fontl {
+    font-family: 'DMSansCustom', 'IconicCustom', sans-serif;
 }
 
 *:root {
@@ -34,6 +50,7 @@ body {
     src: url('../font/FC\ Iconic\ Regular.ttf') format('opentype');
     font-weight: lighter;
     font-style: normal;
+    
 }
 
 @font-face {
@@ -41,6 +58,7 @@ body {
     src: url('../font/FC\ Iconic\ Bold.ttf') format('opentype');
     font-weight: bold;
     font-style: normal;
+    
 }
 
 .dm-sans-<uniquifier> {
@@ -48,6 +66,7 @@ body {
     font-optical-sizing: auto;
     font-weight: <weight>;
     font-style: normal;
+    
 }
 
 *, *::before, *::after {
@@ -401,6 +420,10 @@ nav {
     width: 100%;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+div.product-info {
+    
 }
 
 .product-info h1 {

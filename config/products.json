@@ -4,7 +4,7 @@
           "id": "HERTZV1",
           "name": "HERTZ R1-Dev ",
           "price": 1400.00,
-          "stock": "Out of stock",
+          "stock": "Pre Order",
           "image": "images/zh3.png",
           "category": "Pentesting Hardware/Jammer",
           "images": [
@@ -64,9 +64,9 @@
         },
         {
           "id": "HERTZV2",
-          "name": "HERTZ R1-Beta",
+          "name": "HERTZ R1-Mini",
           "price": 1100.00,
-          "stock": "Out of stock",
+          "stock": "Pre Order",
           "image": "images/zh2.png",
           "category": "Pentesting Hardware/Jammer",
           "images": [
@@ -75,7 +75,8 @@
             "images/zh4.png",
             "images/zh5.png"
           ],
-          "description": "ZipherHertz is an easy way to switch off your wireless devices. Have you ever been annoyed by your neighbours? Try it now! <br> <br> No Case and battery! <br> - ไม่มีเคส และ แบตเตอรี่สำหรับรุ่น R1-Beta",
+          
+          "description": "ZipherHertz is an easy way to switch off your wireless devices. Have you ever been annoyed by your neighbours? Try it now! <br> <br> No Case and battery! <br> - ไม่มีเคส และ แบตเตอรี่สำหรับรุ่น R1-Mini",
           "features": [
             {
               "name": "What's Included?",
@@ -147,7 +148,7 @@
             {
               "name": "Battery is not Required.",
               "items": [
-                "ใช้ไฟจากอุปกรณ์ที่เชื่อมต่อ ( Just Plug )",
+                "ใช้ไฟจากอุปกรณ์ที่เชื่อมต่อ (Just Plug)",
                 "",
                 ""
               ]
@@ -156,7 +157,8 @@
               "name": "Features",
               "items": [
                 "• Run DuckyScript With WebUi and AutoRun",
-                "- (ใช้รันคำสั่ง DuckyScript ด้วย WebUi และ AutoRun)"
+                "• สามารถรัน DuckyScript ด้วย WebUi และ AutoRun",
+                "• เก็บไฟล์ได้สูงสุด 1000 Files"
               ]
             },
             {

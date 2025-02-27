@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hertz Control</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --primary-color: #7700ff;
+            --secondary-color: #9370db;
+            --button-bg: #242424;
+            --button-hover: #0f0018;
+            --button-active: #7300ff;
+            --status-on: #4caf50;
+            --status-off: #f44336;
+        }
+    
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+    
+        .container {
+            max-width: 80%;
+            width: 100%;
+            padding: 20px;
+        }
+    
+        h1,
+        h2 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        
+        
+
+        .status-panel {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.308);
+        }
+    
+        .status-on {
+            color: var(--status-on);
+            font-weight: bold;
+        }
+    
+        .status-off {
+            color: var(--status-off);
+            font-weight: bold;
+        }
+    
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+    
+        button {
+            background-color: var(--button-bg);
+            color: var(--text-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 14px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    
+        button:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-2px);
+        }
+    
+        button:active {
+            background-color: var(--button-active);
+            color: var(--bg-color);
+        }
+    
+        .stop-button {
+            grid-column: 1 / -1;
+            background-color: rgba(244, 67, 54, 0.2);
+            border-color: var(--status-off);
+        }
+    
+        .stop-button:hover {
+            background-color: rgba(255, 42, 70, 0.37);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <h1>Hertz R1</h1>
+    <div class="status-panel" id="status">
+        <div class="status-item">
+            <span>BLUETOOTH:</span>
+            <span class="%STATUS_BT_CLASS%">%STATUS_BT%</span>
+        </div>
+        
+        <div class="status-item">
+            <span>BLE:</span>
+            <span class="%STATUS_BLE_CLASS%">%STATUS_BLE%</span>
+        </div>
+        
+        <div class="status-item">
+            <span>WIFI:</span>
+            <span class="%STATUS_WIFI_CLASS%">%STATUS_WIFI%</span>
+        </div>
+        
+        <div class="status-item">
+            <span>RC_DRONES:</span>
+            <span class="%STATUS_RC_CLASS%">%STATUS_RC%</span>
+        </div>
+        
+        <div class="status-item">
+            <span>POWER SAVE:</span>
+            <span class="%STATUS_POWER_CLASS%">%STATUS_POWER%</span>
+        </div>
+    </div>
+    
+
+    <div class="button-grid">
+    <button class="button %BTCLASS%" onclick="toggleMode('BLUETOOTH')">Bluetooth</button>
+    <button class="button %BLECLASS%" onclick="toggleMode('BLE')">BLE</button>
+    <button class="button %WIFICLASS%" onclick="toggleMode('WIFI')">WiFi</button>
+    <button class="button %RCCLASS%" onclick="toggleMode('RC_DRONES')">RC Drones</button>
+    <button class="button %POWERCLASS% stop-button" onclick="togglePower()">Stop All</button>
+    </div>
+</div>
+    <script>
+        function toggleMode(mode) {
+            console.log('[WebUI] Sending command: /set?mode=' + mode);
+            fetch('/set?mode=' + mode)
+                .then(response => response.json())
+                .then(data => {
+                    updateUI(data);
+                    if (data.powerSave) {
+                        alert('Power Save ถูกปิดอัตโนมัติเมื่อเลือกโหมดใหม่!');
+                    }
+                });
+        }
+
+        function togglePower() {
+            console.log('[WebUI] Sending command: /set?power=1');
+            fetch('/set?power=1')
+                .then(response => response.json())
+                .then(data => updateUI(data));
+        }
+
+        function updateUI(data) {
+            document.getElementById('btStatus').textContent = (data.currentMode === 0) ? 'ON' : 'OFF';
+            document.getElementById('bleStatus').textContent = (data.currentMode === 1) ? 'ON' : 'OFF';
+            document.getElementById('wifiStatus').textContent = (data.currentMode === 2) ? 'ON' : 'OFF';
+            document.getElementById('rcStatus').textContent = (data.currentMode === 3) ? 'ON' : 'OFF';
+            document.getElementById('powerStatus').textContent = data.powerSave ? 'ON' : 'OFF';
+
+            // อัปเดตสีปุ่มโหมด
+            document.querySelectorAll('button').forEach(btn => {
+                const mode = btn.getAttribute('onclick')?.match(/'([A-Z_]+)'/)?.[1];
+                if (mode) {
+                    const isActive = data.currentMode === ["BLUETOOTH", "BLE", "WIFI", "RC_DRONES"].indexOf(mode);
+                    btn.className = `button ${isActive ? 'on' : 'off'}`;
+                }
+            });
+
+            // อัปเดตสีปุ่ม Power Save
+            document.querySelector('button[onclick*="togglePower()"]').className =
+                `button ${data.powerSave ? 'on' : 'off'}`;
+        }
+    </script>
+</body>
+
+</html>
