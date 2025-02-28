@@ -171,7 +171,7 @@ function renderProductCards(container, products) {
       <img src="${product.image}" alt="${product.name}">
       <h3>${product.name}</h3>
       <span class="price">฿${product.price.toFixed(2)}</span>
-      <span class="stock ${product.stock === 'Out of stock' ? 'out' : ''}">
+      <span class="stock ${['Out of stock', 'Low stock'].includes(product.stock) ? 'out' : ''}">
         ${product.stock}
       </span>
     </a>

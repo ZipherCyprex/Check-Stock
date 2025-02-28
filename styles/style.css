@@ -396,10 +396,12 @@ nav {
 .stock {
     padding: 0 1rem 1rem;
     font-weight: 500;
+    color: #00cc88;
 }
 
 .stock.out {
-    color: #ff0055;
+    
+    color: #ff0000;
 }
 
 /* Product Detail */
